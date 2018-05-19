@@ -7,6 +7,7 @@ server = app.set('port', port);
 
 //socket.io instantiation
 const io = require("socket.io")(server)
+io.set('origins', '*:*');
 
 //listen on every connection
 io.on('connection', (socket) => {
