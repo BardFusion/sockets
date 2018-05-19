@@ -2,7 +2,8 @@ const express = require('express')
 const app = express()
 
 //Listen on port 3003
-server = app.listen(3003)
+var port = normalizePort(process.env.PORT || '3000');
+server = app.set('port', port);
 
 //socket.io instantiation
 const io = require("socket.io")(server)
